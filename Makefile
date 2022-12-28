@@ -20,7 +20,7 @@ endif
 
 .PHONY: all build
 
-all: build
+all: clean libs build
 
 libs:
 	cd lib/glfw && cmake . && make
