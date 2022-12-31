@@ -11,4 +11,4 @@ typedef struct Window {
 // Evil global window
 extern struct Window window;
 
-void window_init();
+void window_init(void);

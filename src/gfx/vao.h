@@ -6,7 +6,7 @@ typedef struct VAO {
 	GLuint handle;
 } VAO;
 
-VAO vao_init();
+VAO vao_init(void);
 void vao_bind(VAO *);
 void vao_attr(VAO *);
 void vao_free(VAO *);

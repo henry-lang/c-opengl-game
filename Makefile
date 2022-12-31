@@ -4,6 +4,7 @@ OBJ = $(SRC:.c=.o)
 NAME = game
 
 CC = clang
+MAKE = make
 CFLAGS = -std=c11 -O2 -g -Wall -Wextra -Wpedantic -Wstrict-aliasing
 CFLAGS += -Wno-pointer-arith -Wno-newline-eof -Wno-unused-parameter -Wno-gnu-statement-expression
 CFLAGS += -Wno-gnu-compound-literal-initializer -Wno-gnu-zero-variadic-macro-arguments
@@ -18,12 +19,17 @@ ifeq ($(UNAME_S), Linux)
 	LDFLAGS += -ldl -lpthread
 endif
 
+ifneq (,$(findstring NT,$(UNAME_S)))
+	LDFLAGS += -mwindows
+	MAKE = mingw32-make
+endif
+
 .PHONY: all
 
 all: clean libs build
 
 libs:
-	cd lib/glfw && cmake . && make
+	cd lib/glfw && cmake . && $(MAKE)
 	cd lib/glad && $(CC) -o src/glad.o -Iinclude -c src/glad.c
 
 build: $(OBJ)

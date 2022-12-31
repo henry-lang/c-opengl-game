@@ -16,7 +16,7 @@ static void _error_cb(int code, const char *description) {
     fprintf(stderr, "GLFW error %d: %s\n", code, description);
 }
 
-void window_init() {
+void window_init(void) {
     glfwSetErrorCallback(_error_cb);
 
     if(!glfwInit())

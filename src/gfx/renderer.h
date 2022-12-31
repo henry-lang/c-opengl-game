@@ -11,5 +11,5 @@ typedef struct Renderer {
 	Shader shaders[NUM_SHADERS];
 } Renderer;
 
-Renderer renderer_init();
+Renderer renderer_init(void);
 void renderer_free(Renderer *);

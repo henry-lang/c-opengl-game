@@ -1,7 +1,7 @@
 #include "renderer.h"
 #include "shader.h"
 
-Renderer renderer_init() {
+Renderer renderer_init(void) {
 	Renderer self = {0};
 
 	self.shaders[SHADER_BASIC] = shader_init(
