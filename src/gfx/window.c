@@ -36,6 +36,7 @@ void window_init(void) {
     }
 
     glfwMakeContextCurrent(window.handle);
+    glfwFocusWindow(window.handle);
     glfwSetFramebufferSizeCallback(window.handle, _window_size_cb);
 
     if (!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress)) {
