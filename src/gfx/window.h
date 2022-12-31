@@ -1,10 +1,14 @@
 #pragma once
 
 #include "../math/ivec2.h"
+#include "libs.h"
 
 typedef struct Window {
 	GLFWwindow *handle;
-	ivec2 size;
+	IVec2 size;
 } Window;
 
-extern 
+// Evil global window
+extern struct Window window;
+
+void window_init();

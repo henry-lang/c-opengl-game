@@ -18,7 +18,7 @@ ifeq ($(UNAME_S), Linux)
 	LDFLAGS += -ldl -lpthread
 endif
 
-.PHONY: all build
+.PHONY: all
 
 all: clean libs build
 
