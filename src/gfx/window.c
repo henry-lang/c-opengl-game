@@ -28,7 +28,7 @@ void window_init(void) {
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
-    window.size = ivec2(800, 600);
+    window.size = ivec2(800, 800);
     window.handle = glfwCreateWindow(window.size.x, window.size.y, "Game", NULL, NULL);
     if(!window.handle) {
         glfwTerminate();
@@ -40,7 +40,7 @@ void window_init(void) {
     glfwSetFramebufferSizeCallback(window.handle, _window_size_cb);
 
     if (!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress)) {
-        fprintf(stderr, "%s",  "error initializing GLAD\n");
+        fprintf(stderr, "%s", "error initializing GLAD\n");
         glfwTerminate();
         exit(EXIT_FAILURE);
     }

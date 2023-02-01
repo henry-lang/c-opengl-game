@@ -5,8 +5,8 @@ Renderer renderer_init(void) {
 	Renderer self = {0};
 
 	self.shaders[SHADER_BASIC] = shader_init(
-		"res/shaders/basic.vs",
-		"res/shaders/basic.fs",
+		"./res/shaders/basic.vs",
+		"./res/shaders/basic.fs",
 		1,
 		(VertexAttribute[]) {{0, "position"}}
 	);

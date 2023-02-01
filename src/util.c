@@ -16,7 +16,7 @@ void *allocate(size_t size) {
 }
 
 char *read_file_to_string(const char *path) {
-	FILE *file = fopen(path, "r");
+	FILE *file = fopen(path, "rb");
 	if(!file) {
 		return NULL;
 	}
@@ -25,16 +25,19 @@ char *read_file_to_string(const char *path) {
 	long length = ftell(file);
 	fseek(file, 0, SEEK_SET);
 
+	// Allocate enough space for null-terminator.
 	char *buffer = allocate(length + 1);
 
-	if(fread(buffer, 1, length, file) != (usize) length) {
-		// Couldn't read entire file, just return early
+	fread(buffer, 1, length, file);
+	if(ferror(file)) {
+		// Couldn't read file.
 		free(buffer);
 		return NULL;
 	}
+	fclose(file);
 
 	// Very important
 	buffer[length] = '\0';
-
+	
 	return buffer;
 }

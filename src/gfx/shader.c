@@ -26,6 +26,7 @@ static void shader_log_failure(
 
 static GLuint shader_compile(const char *path, GLenum type) {
 	char *source = read_file_to_string(path);
+
 	if(!source) {
 		printf("Failed to read shader %s to file.", path);
 		exit(EXIT_FAILURE);
