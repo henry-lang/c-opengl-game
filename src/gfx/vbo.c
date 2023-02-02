@@ -3,7 +3,7 @@
 #include "libs.h"
 #include "vbo.h"
 
-VBO vbo_create(GLenum target, bool dynamic) {
+VBO vbo_init(GLenum target, bool dynamic) {
 	VBO self = {
 		.target = target,
 		.dynamic = dynamic

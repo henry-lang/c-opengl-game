@@ -15,6 +15,17 @@ void *allocate(size_t size) {
 	return data;
 }
 
+void *reallocate(void *orig, size_t size) {
+	void *data = realloc(orig, size);
+
+	if(!data) {
+		printf("Failed to reallocate memory to size %zu\n", size);
+		exit(EXIT_FAILURE);
+	}
+
+	return data;
+}
+
 char *read_file_to_string(const char *path) {
 	FILE *file = fopen(path, "rb");
 	if(!file) {

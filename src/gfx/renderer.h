@@ -1,6 +1,10 @@
 #pragma once
 
 #include "shader.h"
+#include "camera.h"
+#include "vao.h"
+#include "vbo.h"
+#include "../math/mat4.h"
 
 typedef enum ShaderType {
 	SHADER_BASIC,
@@ -9,6 +13,10 @@ typedef enum ShaderType {
 
 typedef struct Renderer {
 	Shader shaders[NUM_SHADERS];
+	Camera camera;
+	VAO quad_vao;
+	VBO quad_vbo;
+	VBO quad_ibo;
 } Renderer;
 
 Renderer renderer_init(void);

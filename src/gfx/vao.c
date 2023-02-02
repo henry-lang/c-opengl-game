@@ -19,7 +19,8 @@ void vao_attr(
 	GLint size,
 	GLenum type,
 	GLsizei stride,
-	size_t offset
+	size_t offset,
+	bool instanced
 ) {
 	vao_bind(self);
 	vbo_bind(vbo);
