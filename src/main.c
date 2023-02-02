@@ -13,6 +13,8 @@ int main(int argc, char **argv) {
 
     Renderer renderer = renderer_init();
 
+    renderer_use_shader(&renderer, SHADER_BASIC);
+
     GLuint VAO, VBO;
 
     glGenVertexArrays(1, &VAO);
@@ -32,7 +34,13 @@ int main(int argc, char **argv) {
         0.075f, 0.075f,
         0.075f, 0.075f,
         0.025f, 0.075f,
-        0.025f, 0.025f
+        0.025f, 0.025f,
+        0.00f, 0.00f,
+        1.0f, 0.00f,
+        1.0f, 1.0f,
+        1.0f, 1.0f,
+        0.00f, 1.0f,
+        0.00f, 0.00f,
     };
     glBufferData(GL_ARRAY_BUFFER, sizeof(data), data, GL_STATIC_DRAW);
     glEnableVertexAttribArray(0);
@@ -43,10 +51,8 @@ int main(int argc, char **argv) {
     while(!glfwWindowShouldClose(window.handle)) {
         glClearColor(1.0, 1.0, 1.0, 1.0);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-        glUseProgram(renderer.shaders[SHADER_BASIC].program_handle);
         glBindVertexArray(VAO);
-        glDrawArrays(GL_TRIANGLES, 0, 12);
+        glDrawArrays(GL_TRIANGLES, 0, 18);
 
         glfwSwapBuffers(window.handle);
         glfwPollEvents();

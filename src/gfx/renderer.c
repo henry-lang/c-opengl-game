@@ -14,6 +14,10 @@ Renderer renderer_init(void) {
 	return self;
 }
 
+void renderer_use_shader(Renderer *self, ShaderType type) {
+	glUseProgram(self->shaders[type].program_handle);
+}
+
 void renderer_free(Renderer *self) {
 	for(int i = 0; i < NUM_SHADERS; i++) {
 		shader_free(&self->shaders[i]);
