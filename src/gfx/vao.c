@@ -41,7 +41,7 @@ void vao_attr(
     		glVertexAttribPointer(index, size, type, GL_FALSE, stride, (void *) offset);
     	} 
 	}
-
+	
 	glEnableVertexAttribArray(index);
 }
 
