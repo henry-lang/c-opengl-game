@@ -1,4 +1,0 @@
-/Users/hlangmack/dev/c-opengl-game/build/CMakeFiles/game.dir
-/Users/hlangmack/dev/c-opengl-game/build/CMakeFiles/clean-all.dir
-/Users/hlangmack/dev/c-opengl-game/build/CMakeFiles/edit_cache.dir
-/Users/hlangmack/dev/c-opengl-game/build/CMakeFiles/rebuild_cache.dir
