@@ -1,5 +1,4 @@
-#include <stdbool.h>
-
+#include "../types.h"
 #include "libs.h"
 #include "vbo.h"
 

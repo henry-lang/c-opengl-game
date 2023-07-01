@@ -1,8 +1,11 @@
 #pragma once
 
-#include <stdbool.h>
 #include <stdlib.h>
 #include <stdint.h>
+
+typedef int bool;
+#define true 1
+#define false 0
 
 typedef uint8_t u8;
 typedef uint16_t u16;
